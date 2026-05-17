@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Horos Watches</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" style="background: rgba(0, 0, 0, 0.85); padding: 1rem 5%;">
+        <div class="logo">
+            <a href="index.html"><h1>Horos</h1></a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="shop.html">Continue Shopping</a></li>
+        </ul>
+        <div class="nav-icons">
+            <i class="fa-solid fa-magnifying-glass" id="search-icon" title="Search"></i>
+            <a href="cart.html" style="color: var(--accent-gold);"><i class="fa-solid fa-cart-shopping" title="Cart"></i></a>
+            <a href="login.html"><i class="fa-regular fa-user" title="Account"></i></a>
+        </div>
+    </nav>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="search-modal">
+        <div class="search-modal-content">
+            <span class="close-search" id="close-search">&times;</span>
+            <form action="shop.html" method="GET" class="search-form">
+                <input type="text" name="q" placeholder="Search for brands, models, or keywords..." required>
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Section -->
+    <section class="cart-section" style="padding: 120px 5% 5rem; min-height: 80vh;">
+        <h2 style="margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem;">Your Cart</h2>
+        
+        <div style="display: flex; gap: 3rem; flex-wrap: wrap;">
+            <div class="cart-items" style="flex: 2; min-width: 300px;">
+                <!-- BACKEND: CART ITEM LOOP START -->
+                <div class="cart-item" style="display: flex; gap: 1.5rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); margin-bottom: 1.5rem; align-items: center;">
+                    <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Watch" style="width: 100px; border-radius: 4px;">
+                    <div style="flex: 1;">
+                        <h4 style="font-size: 1.1rem; margin-bottom: 5px;">Seamaster Diver 300M</h4>
+                        <div style="color: var(--text-secondary); font-size: 0.9rem;">Omega</div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <form action="/cart/update" method="POST">
+                            <input type="hidden" name="product_id" value="1">
+                            <input type="number" name="quantity" value="1" min="1" style="width: 50px; padding: 5px; background: var(--bg-tertiary); color: white; border: 1px solid var(--border-color); text-align: center;">
+                        </form>
+                    </div>
+                    <div style="font-weight: 600;">$5,400</div>
+                    <form action="/cart/remove" method="POST">
+                        <input type="hidden" name="product_id" value="1">
+                        <button type="submit" style="background: transparent; border: none; color: var(--text-secondary); cursor: pointer;"><i class="fa-solid fa-trash"></i></button>
+                    </form>
+                </div>
+                <!-- BACKEND: CART ITEM LOOP END -->
+            </div>
+
+            <div class="cart-summary" style="flex: 1; min-width: 250px; background: var(--bg-tertiary); padding: 2rem; border-radius: 8px; height: fit-content;">
+                <h3 style="margin-bottom: 1.5rem;">Order Summary</h3>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; color: var(--text-secondary);">
+                    <span>Subtotal</span>
+                    <!-- BACKEND: Inject Subtotal -->
+                    <span>$5,400</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; color: var(--text-secondary);">
+                    <span>Shipping</span>
+                    <span>Calculated at checkout</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-bottom: 2rem; font-size: 1.2rem; font-weight: 600; border-top: 1px solid var(--border-color); padding-top: 1rem;">
+                    <span>Total</span>
+                    <!-- BACKEND: Inject Total -->
+                    <span>$5,400</span>
+                </div>
+                <form action="/checkout" method="GET">
+                    <button type="submit" class="btn-primary" style="width: 100%; padding: 15px;">Proceed to Checkout</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <p>&copy; 2026 Horos Watches.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

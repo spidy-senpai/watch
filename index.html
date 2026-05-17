@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horos Watches | Premium Luxury Timepieces</title>
+    <meta name="description" content="Discover the world's most exquisite luxury watches at Horos Watches. Authorized retailer of premium timepieces.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="logo">
+            <a href="#"><h1>Horos</h1></a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li class="has-dropdown">
+                <a href="#brands">Brands <i class="fa-solid fa-chevron-down nav-arrow"></i></a>
+                <div class="mega-menu">
+                    <!-- BACKEND: Populate from Brands table -->
+                    <div class="mega-col">
+                        <h4>Swiss Luxury</h4>
+                        <a href="#">Rolex</a>
+                        <a href="#">Patek Philippe</a>
+                        <a href="#">Audemars Piguet</a>
+                        <a href="#">Omega</a>
+                    </div>
+                    <div class="mega-col">
+                        <h4>German Precision</h4>
+                        <a href="#">A. Lange & Söhne</a>
+                        <a href="#">Glashütte Original</a>
+                        <a href="#">Nomos</a>
+                    </div>
+                </div>
+            </li>
+            <li class="has-dropdown">
+                <a href="#men">Men <i class="fa-solid fa-chevron-down nav-arrow"></i></a>
+                <div class="mega-menu">
+                    <!-- BACKEND: Populate Categories -->
+                    <div class="mega-col">
+                        <h4>By Style</h4>
+                        <a href="#">Dress Watches</a>
+                        <a href="#">Sports Watches</a>
+                        <a href="#">Chronographs</a>
+                        <a href="#">Dive Watches</a>
+                    </div>
+                </div>
+            </li>
+            <li class="has-dropdown">
+                <a href="#women">Women <i class="fa-solid fa-chevron-down nav-arrow"></i></a>
+                <div class="mega-menu">
+                    <div class="mega-col">
+                        <h4>By Style</h4>
+                        <a href="#">Diamond Set</a>
+                        <a href="#">Two-Tone</a>
+                        <a href="#">Everyday Elegance</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="#watch-finder">Watch Finder</a></li>
+            <li><a href="#pre-owned">Pre-Owned</a></li>
+            <li><a href="#blog">The Horos Guide</a></li>
+        </ul>
+        <div class="nav-icons">
+            <i class="fa-solid fa-magnifying-glass" id="search-icon" title="Search"></i>
+            <a href="cart.html"><i class="fa-regular fa-heart" title="Wishlist"></i></a>
+            <a href="login.html"><i class="fa-regular fa-user" title="Account"></i></a>
+        </div>
+    </nav>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="search-modal">
+        <div class="search-modal-content">
+            <span class="close-search" id="close-search">&times;</span>
+            <form action="shop.html" method="GET" class="search-form">
+                <input type="text" name="q" placeholder="Search for brands, models, or keywords..." required>
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-subtitle">The Art of Horology</span>
+            <h2>Timeless Elegance on Your Wrist</h2>
+            <p>Explore our curated collection of the world's finest luxury timepieces, crafted with precision and unparalleled heritage.</p>
+            <button class="btn-primary">Discover the Collection</button>
+        </div>
+    </section>
+
+    <!-- Watch Finder -->
+    <section id="watch-finder" class="watch-finder">
+        <div class="section-header">
+            <h2>Find Your Perfect Timepiece</h2>
+            <div class="divider"></div>
+        </div>
+        <!-- BACKEND: This form submits to the Product Listing Page (PLP) -->
+        <form action="shop.html" method="GET" class="finder-grid">
+            <div class="finder-item">
+                <label for="brand">Brand</label>
+                <select id="brand" name="brand">
+                    <!-- BACKEND: Populate from Database -->
+                    <option value="all">All Brands</option>
+                    <option value="rolex">Rolex</option>
+                    <option value="omega">Omega</option>
+                    <option value="patek">Patek Philippe</option>
+                    <option value="ap">Audemars Piguet</option>
+                </select>
+            </div>
+            <div class="finder-item">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender">
+                    <option value="all">All</option>
+                    <option value="men">Men</option>
+                    <option value="women">Women</option>
+                    <option value="unisex">Unisex</option>
+                </select>
+            </div>
+            <div class="finder-item">
+                <label for="movement">Movement</label>
+                <select id="movement" name="movement">
+                    <option value="all">All Movements</option>
+                    <option value="automatic">Automatic</option>
+                    <option value="manual">Manual Wind</option>
+                    <option value="quartz">Quartz</option>
+                </select>
+            </div>
+            <div class="finder-item finder-submit">
+                <button type="submit" class="btn-primary">Search Watches</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Latest Arrivals (Products) -->
+    <section class="products">
+        <div class="section-header">
+            <h2>Latest Arrivals</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="product-grid">
+            <!-- BACKEND: PRODUCT LOOP START -->
+            <!-- Product 1 -->
+            <div class="product-card" data-product-id="1">
+                <div class="product-actions">
+                    <button class="action-btn add-to-wishlist" title="Add to Wishlist" data-id="1"><i class="fa-regular fa-heart"></i></button>
+                    <a href="product.html?id=1" class="action-btn quick-view" title="View Details"><i class="fa-regular fa-eye"></i></a>
+                </div>
+                <a href="product.html?id=1">
+                    <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Watch" class="product-img">
+                </a>
+                <div class="product-info">
+                    <div class="product-brand">Omega</div>
+                    <a href="product.html?id=1"><h3 class="product-title">Seamaster Diver 300M</h3></a>
+                    <div class="product-price">$5,400</div>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card" data-product-id="2">
+                <div class="product-actions">
+                    <button class="action-btn add-to-wishlist" title="Add to Wishlist" data-id="2"><i class="fa-regular fa-heart"></i></button>
+                    <a href="product.html?id=2" class="action-btn quick-view" title="View Details"><i class="fa-regular fa-eye"></i></a>
+                </div>
+                <a href="product.html?id=2">
+                    <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Watch" class="product-img">
+                </a>
+                <div class="product-info">
+                    <div class="product-brand">Rolex</div>
+                    <a href="product.html?id=2"><h3 class="product-title">Submariner Date</h3></a>
+                    <div class="product-price">$10,250</div>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card" data-product-id="3">
+                <div class="product-actions">
+                    <button class="action-btn add-to-wishlist" title="Add to Wishlist" data-id="3"><i class="fa-regular fa-heart"></i></button>
+                    <a href="product.html?id=3" class="action-btn quick-view" title="View Details"><i class="fa-regular fa-eye"></i></a>
+                </div>
+                <a href="product.html?id=3">
+                    <img src="https://images.unsplash.com/photo-1622434641406-a158123450f9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Watch" class="product-img">
+                </a>
+                <div class="product-info">
+                    <div class="product-brand">Patek Philippe</div>
+                    <a href="product.html?id=3"><h3 class="product-title">Nautilus 5711</h3></a>
+                    <div class="product-price">$35,000</div>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card" data-product-id="4">
+                <div class="product-actions">
+                    <button class="action-btn add-to-wishlist" title="Add to Wishlist" data-id="4"><i class="fa-regular fa-heart"></i></button>
+                    <a href="product.html?id=4" class="action-btn quick-view" title="View Details"><i class="fa-regular fa-eye"></i></a>
+                </div>
+                <a href="product.html?id=4">
+                    <img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Watch" class="product-img">
+                </a>
+                <div class="product-info">
+                    <div class="product-brand">Audemars Piguet</div>
+                    <a href="product.html?id=4"><h3 class="product-title">Royal Oak Offshore</h3></a>
+                    <div class="product-price">$28,500</div>
+                </div>
+            </div>
+            <!-- BACKEND: PRODUCT LOOP END -->
+        </div>
+    </section>
+
+    <!-- The Horos Guide (Blog) -->
+    <section id="blog" class="blog">
+        <div class="section-header">
+            <h2>The Horos Guide</h2>
+            <div class="divider"></div>
+        </div>
+        <div class="blog-grid">
+            <!-- BACKEND: BLOG LOOP START -->
+            <article class="blog-card" data-post-id="1">
+                <img src="https://images.unsplash.com/photo-1584824486516-0555a07fc511?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Watch mechanism" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Education</span>
+                    <h3 class="blog-title">The Anatomy of a Mechanical Movement</h3>
+                    <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+            <article class="blog-card" data-post-id="2">
+                <img src="https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Vintage watch" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Collecting</span>
+                    <h3 class="blog-title">5 Vintage Chronographs to Invest in Now</h3>
+                    <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+            <article class="blog-card" data-post-id="3">
+                <img src="https://images.unsplash.com/photo-1623998021450-85c29c644e0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Dive watch underwater" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Review</span>
+                    <h3 class="blog-title">The Ultimate Dive Watch Showdown: 2026 Edition</h3>
+                    <a href="#" class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </article>
+            <!-- BACKEND: BLOG LOOP END -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>About Horos</h4>
+                <ul>
+                    <li><a href="#">Our Heritage</a></li>
+                    <li><a href="#">Boutiques</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Care</h4>
+                <ul>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Shipping & Returns</a></li>
+                    <li><a href="#">Warranty</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p style="color: var(--text-secondary); font-size: 0.9rem;">Subscribe to receive updates, access to exclusive deals, and more.</p>
+                <!-- BACKEND: Newsletter subscription endpoint -->
+                <form action="/subscribe" method="POST" class="newsletter-form">
+                    <input type="email" name="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Horos Watches. All rights reserved. Authorized Retailer.</p>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

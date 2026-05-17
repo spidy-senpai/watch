@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop | Horos Watches</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" style="background: rgba(0, 0, 0, 0.85); padding: 1rem 5%;">
+        <div class="logo">
+            <a href="index.html"><h1>Horos</h1></a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li class="has-dropdown">
+                <a href="#">Brands <i class="fa-solid fa-chevron-down nav-arrow"></i></a>
+                <div class="mega-menu">
+                    <!-- BACKEND: Populate from Brands table -->
+                    <div class="mega-col">
+                        <h4>Swiss Luxury</h4>
+                        <a href="#">Rolex</a>
+                        <a href="#">Patek Philippe</a>
+                        <a href="#">Audemars Piguet</a>
+                        <a href="#">Omega</a>
+                    </div>
+                </div>
+            </li>
+            <li><a href="shop.html">Watch Finder</a></li>
+            <li><a href="#">Pre-Owned</a></li>
+        </ul>
+        <div class="nav-icons">
+            <i class="fa-solid fa-magnifying-glass" id="search-icon" title="Search"></i>
+            <a href="cart.html"><i class="fa-regular fa-heart" title="Wishlist"></i></a>
+            <a href="login.html"><i class="fa-regular fa-user" title="Account"></i></a>
+        </div>
+    </nav>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="search-modal">
+        <div class="search-modal-content">
+            <span class="close-search" id="close-search">&times;</span>
+            <form action="shop.html" method="GET" class="search-form">
+                <input type="text" name="q" placeholder="Search for brands, models, or keywords..." required>
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <section class="shop-page" style="padding: 120px 5% 5rem; display: flex; gap: 3rem; min-height: 80vh;">
+        <!-- Sidebar Filters -->
+        <aside class="shop-sidebar" style="width: 250px; flex-shrink: 0;">
+            <h3 style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px;">Filters</h3>
+            <form action="shop.html" method="GET">
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="margin-bottom: 10px; font-size: 1rem;">Brand</h4>
+                    <label style="display: block; margin-bottom: 5px; color: var(--text-secondary);"><input type="checkbox" name="brand" value="rolex"> Rolex</label>
+                    <label style="display: block; margin-bottom: 5px; color: var(--text-secondary);"><input type="checkbox" name="brand" value="omega"> Omega</label>
+                    <label style="display: block; margin-bottom: 5px; color: var(--text-secondary);"><input type="checkbox" name="brand" value="patek"> Patek Philippe</label>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                    <h4 style="margin-bottom: 10px; font-size: 1rem;">Price</h4>
+                    <input type="range" name="price" min="0" max="50000" style="width: 100%;">
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; padding: 10px;">Apply Filters</button>
+            </form>
+        </aside>
+
+        <!-- Product Grid -->
+        <div class="shop-main" style="flex: 1;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2>All Watches</h2>
+                <select name="sort" style="padding: 10px; background: var(--bg-tertiary); color: white; border: 1px solid var(--border-color); outline: none;">
+                    <option value="newest">Newest Arrivals</option>
+                    <option value="price_low">Price: Low to High</option>
+                    <option value="price_high">Price: High to Low</option>
+                </select>
+            </div>
+            <div class="product-grid">
+                <!-- BACKEND: PRODUCT LOOP START -->
+                <div class="product-card" data-product-id="1">
+                    <div class="product-actions">
+                        <button class="action-btn add-to-wishlist" title="Add to Wishlist" data-id="1"><i class="fa-regular fa-heart"></i></button>
+                        <a href="product.html?id=1" class="action-btn quick-view" title="View Details"><i class="fa-regular fa-eye"></i></a>
+                    </div>
+                    <a href="product.html?id=1">
+                        <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Watch" class="product-img">
+                    </a>
+                    <div class="product-info">
+                        <div class="product-brand">Omega</div>
+                        <a href="product.html?id=1"><h3 class="product-title">Seamaster Diver 300M</h3></a>
+                        <div class="product-price">$5,400</div>
+                    </div>
+                </div>
+                <div class="product-card" data-product-id="2">
+                    <div class="product-actions">
+                        <button class="action-btn add-to-wishlist" title="Add to Wishlist" data-id="2"><i class="fa-regular fa-heart"></i></button>
+                        <a href="product.html?id=2" class="action-btn quick-view" title="View Details"><i class="fa-regular fa-eye"></i></a>
+                    </div>
+                    <a href="product.html?id=2">
+                        <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Watch" class="product-img">
+                    </a>
+                    <div class="product-info">
+                        <div class="product-brand">Rolex</div>
+                        <a href="product.html?id=2"><h3 class="product-title">Submariner Date</h3></a>
+                        <div class="product-price">$10,250</div>
+                    </div>
+                </div>
+                <!-- BACKEND: PRODUCT LOOP END -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>About Horos</h4>
+                <ul>
+                    <li><a href="#">Our Heritage</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

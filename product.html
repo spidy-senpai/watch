@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Horos Watches</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" style="background: rgba(0, 0, 0, 0.85); padding: 1rem 5%;">
+        <div class="logo">
+            <a href="index.html"><h1>Horos</h1></a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="shop.html">Watch Finder</a></li>
+        </ul>
+        <div class="nav-icons">
+            <i class="fa-solid fa-magnifying-glass" id="search-icon" title="Search"></i>
+            <a href="cart.html"><i class="fa-regular fa-heart" title="Wishlist"></i></a>
+            <a href="login.html"><i class="fa-regular fa-user" title="Account"></i></a>
+        </div>
+    </nav>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="search-modal">
+        <div class="search-modal-content">
+            <span class="close-search" id="close-search">&times;</span>
+            <form action="shop.html" method="GET" class="search-form">
+                <input type="text" name="q" placeholder="Search for brands, models, or keywords..." required>
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Product Details Section -->
+    <section class="product-details" style="padding: 120px 5% 5rem; display: flex; gap: 4rem; min-height: 80vh; flex-wrap: wrap;">
+        <!-- BACKEND: Inject product image -->
+        <div class="product-image" style="flex: 1; min-width: 300px;">
+            <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Luxury Watch" style="width: 100%; border-radius: 8px;">
+        </div>
+        
+        <div class="product-info-detailed" style="flex: 1; min-width: 300px;">
+            <!-- BACKEND: Inject product details -->
+            <div class="product-brand" style="color: var(--accent-gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px;">Omega</div>
+            <h1 style="font-size: 2.5rem; margin-bottom: 1rem;">Seamaster Diver 300M</h1>
+            <div class="product-price" style="font-size: 1.5rem; margin-bottom: 2rem;">$5,400</div>
+            
+            <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 2rem;">
+                Since 1993, the Seamaster Professional Diver 300M has enjoyed a legendary following. Today's modern collection has embraced that famous ocean heritage and updated it with OMEGA's best innovation and design.
+            </p>
+
+            <ul style="margin-bottom: 2rem; color: var(--text-secondary);">
+                <li style="margin-bottom: 10px;"><strong>Movement:</strong> Automatic</li>
+                <li style="margin-bottom: 10px;"><strong>Case Size:</strong> 42mm</li>
+                <li style="margin-bottom: 10px;"><strong>Material:</strong> Steel</li>
+                <li style="margin-bottom: 10px;"><strong>Water Resistance:</strong> 300 m (1000 ft)</li>
+            </ul>
+
+            <form action="/cart/add" method="POST" style="display: flex; gap: 1rem;">
+                <!-- BACKEND: Hidden input for product ID -->
+                <input type="hidden" name="product_id" value="1">
+                <button type="submit" class="btn-primary" style="flex: 1; padding: 15px; font-size: 1rem;">Add to Cart</button>
+                <button type="button" class="btn-primary" style="background: transparent; border: 1px solid var(--border-color); padding: 15px;"><i class="fa-regular fa-heart"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <p>&copy; 2026 Horos Watches.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

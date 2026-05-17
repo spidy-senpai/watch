@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register | Horos Watches</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar" style="background: rgba(0, 0, 0, 0.85); padding: 1rem 5%;">
+        <div class="logo">
+            <a href="index.html"><h1>Horos</h1></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="shop.html">Shop</a></li>
+        </ul>
+    </nav>
+
+    <section class="login-section" style="padding: 150px 5% 5rem; min-height: 80vh; display: flex; justify-content: center; align-items: flex-start;">
+        <div class="auth-container" style="background: var(--bg-tertiary); padding: 3rem; border-radius: 8px; width: 100%; max-width: 450px; border: 1px solid var(--border-color);">
+            <h2 style="margin-bottom: 2rem; text-align: center;">Sign In</h2>
+            
+            <!-- BACKEND: Login Form Endpoint -->
+            <form action="/login" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div>
+                    <label for="email" style="display: block; margin-bottom: 5px; color: var(--text-secondary); font-size: 0.9rem;">Email Address</label>
+                    <input type="email" id="email" name="email" required style="width: 100%; padding: 12px; background: var(--bg-primary); border: 1px solid var(--border-color); color: white; outline: none;">
+                </div>
+                <div>
+                    <label for="password" style="display: block; margin-bottom: 5px; color: var(--text-secondary); font-size: 0.9rem;">Password</label>
+                    <input type="password" id="password" name="password" required style="width: 100%; padding: 12px; background: var(--bg-primary); border: 1px solid var(--border-color); color: white; outline: none;">
+                </div>
+                <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+                    <label style="color: var(--text-secondary);"><input type="checkbox" name="remember" style="margin-right: 5px;"> Remember me</label>
+                    <a href="/forgot-password" style="color: var(--accent-gold);">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn-primary" style="padding: 12px; width: 100%;">Sign In</button>
+            </form>
+            
+            <div style="margin-top: 2rem; text-align: center; color: var(--text-secondary); font-size: 0.9rem;">
+                Don't have an account? <a href="/register" style="color: var(--accent-gold); margin-left: 5px;">Create Account</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <p>&copy; 2026 Horos Watches.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
