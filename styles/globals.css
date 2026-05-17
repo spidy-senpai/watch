@@ -1,0 +1,8 @@
+:root{--accent:#111}
+html,body,#__next{height:100%}
+body{margin:0;font-family:Inter, system-ui, Arial, sans-serif;color:#111}
+a{color:inherit}
+
+/* basic utilities for scaffold */
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+
